@@ -51,6 +51,17 @@ module.exports = appInfo => {
     agent: false,
   };
 
+
+  // use for cookie sign key, should change to your own and keep security
+  config.keys = appInfo.name + '_1511005864199_129';
+
+  // add your config here
+  config.wechat_config = {
+    token: 'samueltalk',
+    appid: 'wxc935aa3f8df2e449',
+    encodingAESKey: 'y1QbWfU9FHwYzcMmZbhn4xvX0ONrx5xR1E8l4XJ8kHh',
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
