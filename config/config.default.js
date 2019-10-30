@@ -35,15 +35,17 @@ module.exports = appInfo => {
     // 单数据库信息配置
     client: {
       // host
-      host: 'localhost',
+      // host: 'localhost',
+      host: '139.199.4.156',
       // 端口号
       port: '3306',
       // 用户名
-      user: 'root',
+      user: 'resource',
+      // user: 'root',
       // 密码
-      password: 'Sql@2019',
+      password: 'NTDkGRx6SxX6fR5a',
       // 数据库名
-      database: 'music',
+      database: 'resource',
     },
     // 是否加载到 app 上，默认开启
     app: true,
