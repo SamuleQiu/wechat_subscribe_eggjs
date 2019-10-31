@@ -54,3 +54,5 @@ sql remote
 
 resource
 NTDkGRx6SxX6fR5a
+
+[egg + co-wechat快速搭建微信公众号对接服务](https://blog.csdn.net/zhaolandelong/article/details/79093502)

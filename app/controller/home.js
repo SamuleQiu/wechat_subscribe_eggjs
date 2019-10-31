@@ -6,6 +6,9 @@ const sha1 = require('sha1');
 class HomeController extends Controller {
   async index() {
     const obj = this.ctx.query;
+    console.log('----------');
+    console.log(obj);
+    console.log('----------');
     const token = this.ctx.app.config.wechat_config.token,
       timestamp = obj.timestamp,
       nonce = obj.nonce,

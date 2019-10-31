@@ -7,11 +7,13 @@
     "declarations": true
   },
   "dependencies": {
+    "co-wechat": "2.4.0",
     "egg": "^2.15.1",
     "egg-mysql": "3.0.0",
     "egg-scripts": "^2.11.0",
     "egg-view-arttemplate": "2.0.2",
     "egg-view-ejs": "2.0.0",
+    "koa": "2.11.0",
     "sha1": "1.1.1"
   },
   "devDependencies": {

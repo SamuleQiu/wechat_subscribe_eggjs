@@ -15,6 +15,13 @@ module.exports = appInfo => {
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1572279827547_7203';
 
+  config.security = {
+    csrf: {
+      enable: false,
+      ignoreJSON: true,
+    },
+  };
+
   // add your middleware config here
   config.middleware = [];
 
@@ -29,6 +36,25 @@ module.exports = appInfo => {
     debug: false,
     bail: true,
     cache: true,
+  };
+
+  // 覆盖egg自带的配置 使支持接收xml参数
+  config.bodyParser = {
+    enable: true,
+    encoding: 'utf8',
+    formLimit: '100kb',
+    jsonLimit: '100kb',
+    strict: true,
+    // @see https://github.com/hapijs/qs/blob/master/lib/parse.js#L8 for more options
+    queryString: {
+      arrayLimit: 100,
+      depth: 5,
+      parameterLimit: 1000,
+    },
+    enableTypes: [ 'json', 'form', 'text' ],
+    extendTypes: {
+      text: [ 'text/xml', 'application/xml' ],
+    },
   };
 
   config.mysql = {
@@ -59,9 +85,12 @@ module.exports = appInfo => {
 
   // add your config here
   config.wechat_config = {
+    // token: 'samueltalk',
+    // appid: 'wxc935aa3f8df2e449',
+    // encodingAESKey: 'y1QbWfU9FHwYzcMmZbhn4xvX0ONrx5xR1E8l4XJ8kHh',
     token: 'samueltalk',
     appid: 'wxc935aa3f8df2e449',
-    encodingAESKey: 'y1QbWfU9FHwYzcMmZbhn4xvX0ONrx5xR1E8l4XJ8kHh',
+    // encodingAESKey: 'y1QbWfU9FHwYzcMmZbhn4xvX0ONrx5xR1E8l4XJ8kHh',
   };
 
   config.cluster = {
