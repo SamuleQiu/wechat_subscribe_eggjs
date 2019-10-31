@@ -64,10 +64,19 @@ module.exports = appInfo => {
     encodingAESKey: 'y1QbWfU9FHwYzcMmZbhn4xvX0ONrx5xR1E8l4XJ8kHh',
   };
 
+  config.cluster = {
+    listen: {
+      port: 7001,
+      hostname: '0.0.0.0', // 不建议设置 hostname 为 '0.0.0.0'，它将允许来自外部网络和来源的连接，请在知晓风险的情况下使用
+      // path: '/var/run/egg.sock',
+    },
+  };
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
   };
+
 
   return {
     ...config,
